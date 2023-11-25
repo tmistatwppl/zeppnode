@@ -1,0 +1,48 @@
+tm1
+zeus create tm1
+app type - APP
+OS 2.0 API
+app template - Calories
+zeus dev - GTS 4
+
+tm2
+zeus create tm2
+type APP
+OS 2.0
+Empty
+app-side y
+sett y
+platform Rex-2 (ale wyszlo Amazfit GTR Mini)
+
+tm3 rebuild
+zeus create tm3
+type APP
+OS 2.0
+Empty
+app-side y
+sett y
+platformy Rex-2
+
+tm4
+zeus create tm4
+type watchface
+OS 2.0
+Empty
+platformy Rex-2 
+
+tm5
+zeus create tm5
+type APP
+OS 2.0
+hello-world
+platformy dopiero po zeus dev i wybralem gtr, wyszlo gtr 4
+
+tm6 
+zeus create tm6
+type APP
+OS 2.0
+Empty
+app-side y
+sett y
+platformy GTR 4
+
