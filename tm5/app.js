@@ -6,5 +6,5 @@ App({
 
   onDestroy(options) {
     console.log("app on destroy invoke");
-  },
-});
+  }
+})
