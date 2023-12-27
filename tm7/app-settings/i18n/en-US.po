@@ -1,0 +1,2 @@
+msgid "app-settings-msg1"
+msgstr "This is an example msg in app-settings"
