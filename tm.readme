@@ -48,7 +48,7 @@ platformy GTR 4
 
 
 
-robie powrownianie tm6 vs tm3 to sa wybenerowane app empty
+robie porownanie tm6 vs tm3 to sa wygenerowane app empty
 tm6 na gtr 4 , tm3 na rex-2 , spisze roznice i potem sprobuje recznie wprowadzic takie roznice na bazie tm5 zeby dostac appke rex2
 /assets - tutaj mam folder 466x466-amazfit-gtr-4 vs 454x454-amazfit-t-rez-2 i tam plik icon.png jest akurat taki sam 64x64 pixele
 /app.json - tuta jest wiecej roznic :
