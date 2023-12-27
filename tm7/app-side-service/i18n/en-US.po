@@ -1,0 +1,2 @@
+msgid "app-side-msg1"
+msgstr "This is an example of msg saved in app-side-service"
