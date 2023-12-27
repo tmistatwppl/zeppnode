@@ -38,7 +38,8 @@
         "page": {
           "pages": [
             "page/index",
-            "page/sensor/tmgeo1",
+            "page/GEO/geo1",
+            "page/TIME/time1",
             "page/sensor/blood_oxygen",
             "page/sensor/calorie",
             "page/sensor/distance",

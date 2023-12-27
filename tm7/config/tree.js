@@ -1,70 +1,16 @@
 export const tmMenuTree = {
-  ui: {
-    widget: {
-      TEXT: {
-        page: 'text'
-      },
-      IMG: {
-        page: 'img'
-      },
-      BUTTON: {
-        page: 'button'
-      },
-      FILL_RECT: {
-        page: 'fill_rect'
-      },
-      STROKE_RECT: {
-        page: 'stroke_rect'
-      },
-      ARC: {
-        page: 'arc'
-      },
-      IMG_ANIM: {
-        page: 'img_anim'
-      },
-      QRCODE: {
-        page: 'qrcode'
-      },
-      DIALOG: {
-        page: 'dialog'
-      },
-      HISTOGRAM: {
-        page: 'histogram'
-      },
-      POLYLINE: {
-        page: 'polyline'
-      },
-      RADIO_GROUP: {
-        page: 'radio_group'
-      },
-      CHECKBOX_GROUP: {
-        page: 'checkbox_group'
-      },
-      SLIDE_SWITCH: {
-        page: 'slide_switch'
-      },
-      PICK_DATE: {
-        page: 'pick_date'
-      },
-      SCROLL_LIST: {
-        page: 'scroll_list'
-      },
-      VIEW_CONTAINER: {
-        page: 'view_container'
-      },
-      CYCLE_LIST: {
-        page: 'cycle_list'
-      },
-      CYCLE_IMAGE_TEXT_LIST: {
-        page: 'cycle_image_text_list'
-      }
+  GEO: {/*GEO jest tuta etykieta menu ale tez sciezka do pliku geo1.js */     
+    geo1: {
+      page: "geo1",
+    }
+  },
+  TIME: {/*TIME jest tutaj pod-menu ale jest tez sciezka do pliku time1.js*/
+    time1: {
+      page: "time1",
     }
   },
   sensor: {
-    tmgeo1: {
-      page: "tmgeo1",
-    },
-      BloodOxygen: {
+    BloodOxygen: {
         page: "blood_oxygen",
     },
     Calorie: {
@@ -93,19 +39,6 @@ export const tmMenuTree = {
     },
     Stress: {
       page: 'stress'
-    }
-  },
-  interaction: {
-    OnDigitalCrown: {
-      page: 'on_digital_crown'
-    },
-    OnKey: {
-      page: 'on_key'
-    }
-  },
-  router: {
-    SetLaunchAppTimeOut: {
-      page: 'set_launch_app_timeout'
     }
   }
 }

@@ -6,7 +6,7 @@ import TextByLine from "../../utils/UI/TextByLine";
 
 PageAdvanced({
   state: {
-    pageName: "DISTANCE",
+    pageName: "geo1",
   },
   build() {
     const distance = new Distance();
