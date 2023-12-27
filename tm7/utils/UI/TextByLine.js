@@ -1,5 +1,11 @@
 import { createWidget, widget, align, text_style } from "@zos/ui";
 import { px } from "@zos/utils";
+import {TEXTBYLINE_COLOR,TEXTBYLINE_SIZE} from "../../config/constants";
+
+
+export function MakeYByLine(line) {
+   return (px(line * (2*TEXTBYLINE_SIZE)) + 80)
+}
 
 export default class TextByLine {
   constructor(params = {}) {
@@ -16,9 +22,9 @@ export default class TextByLine {
       line = this.line
     }
 
-    const y = px(line * 60 + 120)
+    const y = MakeYByLine(line)
     this.y = y
-
+    
     this.line = line + 1
 
     return createWidget(widget.TEXT, {
@@ -26,8 +32,8 @@ export default class TextByLine {
       y,
       w: px(480),
       h: px(46),
-      color: 0xffffff,
-      text_size: px(20),
+      color: TEXTBYLINE_COLOR,
+      text_size: px(TEXTBYLINE_SIZE),
       align_h: align.CENTER_H,
       align_v: align.CENTER_V,
       text_style: text_style.NONE,

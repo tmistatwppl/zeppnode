@@ -8,7 +8,7 @@ function PageAdvanced(args) {
   const { build } = args;
 
   const beforeFn = function () {
-    const { pageName = "tm7 APP" } = this.state;
+    const { pageName = "tm7" } = this.state;
 
     const title = new Title({
       text: pageName,
