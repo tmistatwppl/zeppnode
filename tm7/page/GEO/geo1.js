@@ -4,53 +4,50 @@ import { px } from "@zos/utils";
 import PageAdvanced from "../../utils/template/PageAdvanced";
 import TextByLine, { MakeYByLine } from "../../utils/UI/TextByLine";
 import {DEFAULT_COLOR,DEFAULT_COLOR_TRANSPARENT,TITLE_FONT_COLOR,TITLE_FONT_SIZE} from "../../config/constants";
+import { DEVICE_WIDTH } from "../../config/device";
 
 PageAdvanced({
   state: {
     pageName: "geo1",
   },
   build() {
-    //const distance = new Distance();
     const geolocation = new Geolocation();
+    geolocation.start();
 
     const currentLat = new TextByLine({
-      //text: `current:${distance.getLatit()}`,
-      text: `Lat:${geolocation.getLatitude()}`,line: 0,}).render();
+      text: `Lat:${geolocation.getLatitude()}`,line: 0, margin: 44,}).render();
 
     const currentLon = new TextByLine({
-      //text: `current:${distance.getLatit()}`,
-      text: `Lon:${geolocation.getLongitude()}`, line: 1,}).render();
+      text: `Long:${geolocation.getLongitude()}`, line: 1, margin: 44,}).render();
 
-    const changedLat = new TextByLine({text: `EVENT-CHANGE-LAT`, line: 2,}).render();
+    const changedLat = new TextByLine({text: `EVENT-CHANGE-LAT`, line: 2, margin: 44,}).render();
 
-    const changedLon = new TextByLine({text: `EVENT-CHANGE-LON`, line: 3,}).render();
+    const changedLong = new TextByLine({text: `EVENT-CHANGE-LON`, line: 3, margin: 44,}).render();
 
-    /*stary callback z distance
+    //tm dbg
+    const geoStatus = new TextByLine({
+      text: `geo init...`,line: 4, margin: 44,}).render();
+    
     const changeCallback = () => {
-      changeEventText.setProperty(prop.MORE, {text: `EVENT-CHANGE: ${distance.getCurrent()}`,});
-    };
-    */
+      //tm dbg
+      geoStatus.setProperty(prop.MORE, {text: `ngeo: ${geolocation.getStatus()}`,});
 
-    const changeCallback = () => {
-      if (geolocation.getStatus() === 'A') {
-        //console.log(geolocation.getLatitude())
-        changedLat.setProperty(prop.MORE, {text: `nLAT: ${geolocation.getLatitude()}`,});
-
-        //console.log(geolocation.getLongitude())
-        changedLon.setProperty(prop.MORE, {text: `nLON: ${geolocation.getLongitude()}`,});
-      }
+      //if (geolocation.getStatus() === 'A') 
+      changedLat.setProperty(prop.MORE, {text: `nLAT: ${geolocation.getLatitude()}`,});
+      changedLong.setProperty(prop.MORE, {text: `nLONG: ${geolocation.getLongitude()}`,});    
     }
 
     createWidget(widget.BUTTON, {
-      x: px(80),
-      y: MakeYByLine(4),
+      x: (DEVICE_WIDTH - 240) / 2,
+      y: MakeYByLine(5),
       w: px(240),
-      h: px(40),
+      h: px(46),
       radius: px(16),
       normal_color: DEFAULT_COLOR,
       press_color: DEFAULT_COLOR_TRANSPARENT,
-      text: "update",
+      text: "UPDATE",
       click_func: geolocation.onChange(changeCallback),
     });
   },
+  //destroy
 });
