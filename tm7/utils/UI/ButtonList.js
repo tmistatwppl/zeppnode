@@ -16,7 +16,7 @@ export default class ButtonList {
     this.length = this.list.length;
     this.space = px(24);
     this.buttonHeight = px(80);
-    this.width = px(400);
+    this.width = px(300);
     this.radius = px(12);
     this.text_size = px(36);
 

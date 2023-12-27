@@ -9,17 +9,22 @@ export function MakeYByLine(line) {
 
 export default class TextByLine {
   constructor(params = {}) {
-    const { text = '', line = 0 } = params
+    const { text = '', line = 0, margin = 0 } = params
 
     this.text = text
     this.line = line
+    this.margin = margin
   }
 
   render(params = {}) {
-    let { text = this.text, line = 0 } = params
+    let { text = this.text, line = 0, margin = 0} = params
 
     if (!line) {
       line = this.line
+    }
+
+    if (!margin) {
+      margin = this.margin
     }
 
     const y = MakeYByLine(line)
@@ -28,14 +33,14 @@ export default class TextByLine {
     this.line = line + 1
 
     return createWidget(widget.TEXT, {
-      x: px(0),
+      x: px(margin),
       y,
       w: px(480),
       h: px(46),
       color: TEXTBYLINE_COLOR,
       text_size: px(TEXTBYLINE_SIZE),
-      align_h: align.CENTER_H,
-      align_v: align.CENTER_V,
+      //align_h: align.CENTER_H,
+      //align_v: align.CENTER_V,
       text_style: text_style.NONE,
       text: this.text,
     });
