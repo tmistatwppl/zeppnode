@@ -2,15 +2,15 @@
   "configVersion": "v2",
   "app": {
     "appId": 25107,
-    "appName": "ZeppOSShowcase",
+    "appName": "tmShowcase",
     "appType": "app",
     "version": {
       "code": 1,
-      "name": "1.0.0"
+      "name": "1.0.1"
     },
     "icon": "icon.png",
     "vender": "zepp",
-    "description": "empty application"
+    "description": "tmshow application"
   },
   "permissions": [
     "data:os.device.info",
@@ -33,7 +33,7 @@
     }
   },
   "targets": {
-    "gt4": {
+    "454x454-amazfit-t-rex-2": {
       "module": {
         "page": {
           "pages": [
@@ -75,20 +75,20 @@
       },
       "platforms": [
         {
-          "name": "gtr4",
-          "deviceSource": 7930112
+          "name": "Teide",
+          "deviceSource": 418
         },
         {
-          "name": "gtr4-w",
-          "deviceSource": 7930113
+          "name": "Teidew",
+          "deviceSource": 419
         }
       ],
-      "designWidth": 480
+      "designWidth": 454
     }
   },
   "i18n": {
     "en-US": {
-      "appName": "ZeppOSShowcase"
+      "appName": "tmShowcase"
     }
   },
   "defaultLanguage": "en-US"
