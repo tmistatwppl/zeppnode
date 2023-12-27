@@ -1,42 +1,39 @@
 import { createWidget, widget, prop } from "@zos/ui";
-import { Distance } from "@zos/sensor";
+import { Time } from '@zos/sensor';
 import { px } from "@zos/utils";
 import PageAdvanced from "../../utils/template/PageAdvanced";
-import TextByLine from "../../utils/UI/TextByLine";
-
+import TextByLine, { MakeYByLine } from "../../utils/UI/TextByLine";
+import {DEFAULT_COLOR,DEFAULT_COLOR_TRANSPARENT,TITLE_FONT_COLOR,TITLE_FONT_SIZE} from "../../config/constants";
+import { DEVICE_WIDTH } from "../../config/device";
 PageAdvanced({
   state: {
     pageName: "time1",
   },
   build() {
-    const distance = new Distance();
+    const time = new Time();
 
-    const currentText = new TextByLine({
-      text: `current:${distance.getCurrent()}`,
-      line: 0,
+    const startTime = new TextByLine({
+      text: `startTime:${time.getTime()}`,
+      line: 0, margin: 44,
     }).render();
 
-    const changeEventText = new TextByLine({
-      text: `EVENT-CHANGE:${distance.getCurrent()}`,
-      line: 1,
+    const newTime = new TextByLine({
+      text: `pending timestamp update`,
+      line: 1, margin: 44
     }).render();
-
-    const changeCallback = () => {
-      changeEventText.setProperty(prop.MORE, {
-        text: `EVENT-CHANGE: ${distance.getCurrent()}`,
-      });
-    };
 
     createWidget(widget.BUTTON, {
-      x: px(80),
-      y: px(300),
-      w: px(300),
-      h: px(60),
-      radius: px(12),
-      normal_color: 0xfc6950,
-      press_color: 0xfeb4a8,
-      text: "REGISTER_CHANGE",
-      click_func: distance.onChange(changeCallback),
+      x: (DEVICE_WIDTH - 240) / 2,
+      y: MakeYByLine(5),
+      w: px(240),
+      h: px(46),
+      radius: px(16),
+      normal_color: DEFAULT_COLOR,
+      press_color: DEFAULT_COLOR_TRANSPARENT,
+      text: "UPDATE",
+      click_func: () => {
+        newTime.setProperty(prop.MORE, {text: `timestamp:${time.getTime()}`, });
+      },
     });
   },
 });
