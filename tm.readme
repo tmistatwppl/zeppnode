@@ -60,4 +60,25 @@ dedisth width
 
 
 
+quick how to - jak odpalic srodowisko developerskie u mnie na fedorce
+podman run -d -p 5901:5901 -p 6901:6901 -v /home/tommy/src/zepp/linux/node:/home/node:Z  localhost/local/debian-node-xfce-vnc:version3
+cd /home/tommy/src/zepp/linux/node/tm5
+code .
+vnc localhost:5901
+right-click open terminal
+# cd /opt/simulator
+# ./simulator --no-sandbox
+login tmistat@wp.pl Tommy11!!
+<via vnc>
+cd /home/node/tm5/
+zeus login (tmistat@wp.pl Tommy11!!)
+zeus dev
+zeus preview -- wymaga login, generuje QR code, ktory jest linkiem do apki. QRcode trzeba zeskanowac telefonem i wciagnac w ten sposob apke via telefon do zegarka.
+( tam w telefonie trzeba wlaczyc developer mode dla zegarka )
+
+
+
+
+
+
 
