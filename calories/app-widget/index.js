@@ -16,7 +16,7 @@ import {
   CALORIES_UNIT_MARIN,
   DEVICE_WIDTH,
   TOTAL_CONSUME_TEXT,
-} from "../utils/styles-gts-3";
+} from "../utils/styles-t-rex-2";
 
 AppWidget({
   state: {
