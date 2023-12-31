@@ -22,7 +22,7 @@ import {
   EQUIVALENT_TO_FOOD_ICON_WIDTH,
   EQUIVALENT_MORE_FOOD_ICON,
   EQUIVALENT_MORE_FOOD_NUM,
-} from "../utils/styles-gts-3";
+} from "../utils/styles-t-rex-2";
 import { FOOD_CALORIES } from "../utils/constants";
 const logger = Logger.getLogger("calories");
 const globalData = getApp()._options.globalData;

@@ -8,6 +8,7 @@ App({
     foodType: '',
   },
   onCreate() {
+    logger("app onCreate invoke");
     try {
       const { foodType = 'chocolate' } = localStorage.getItem('calorie', {})
       this.globalData.foodType = foodType
@@ -17,5 +18,7 @@ App({
     }
   },
 
-  onDestroy() {},
+  onDestroy() {
+      logger("app onDestroy invoke");
+  },
 })
