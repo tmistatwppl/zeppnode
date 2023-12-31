@@ -51,6 +51,16 @@ clone sportowanego na rex-2 showcase
 tutaj chce poprobowac inne sensory 
 dodam tez settings oraz app-side tak jak w tm5
 
+tm8 
+port clalories z sampli na rex-2
+potem rozwijamy pomysl na apke morska 
+tj. 
+geo - lat long / cog sog
+log - distance nM / re-start
+time-date - utc / local / PL - 3 zegarki na jacht
+
+
+
 
 robie porownanie tm6 vs tm3 to sa wygenerowane app empty
 tm6 na gtr 4 , tm3 na rex-2 , spisze roznice i potem sprobuje recznie wprowadzic takie roznice na bazie tm5 zeby dostac appke rex2
@@ -65,7 +75,7 @@ dedisth width
 
 
 quick how to - jak odpalic srodowisko developerskie u mnie na fedorce
-podman run -d -p 5901:5901 -p 6901:6901 -v /home/tommy/src/zepp/linux/node:/home/node:Z  localhost/local/debian-node-xfce-vnc:version3
+podman run -d -p 5901:5901 -p 6901:6901 -v /home/tommy/src/zepp/linux/node:/home/node:Z  localhost/local/debian-node-xfce-vnc:versionXX
 cd /home/tommy/src/zepp/linux/node/tm5
 code .
 vnc localhost:5901
@@ -76,7 +86,7 @@ login tmistat@wp.pl Tommy11!!
 <via vnc>
 cd /home/node/tm5/
 zeus login (tmistat@wp.pl Tommy11!!)
-zeus dev
+zeus dev -- export buildu apki na local symulator, niestety symultor nie dziala w tutaj w kontenerze, tam symulator chce odpalac qemu ..
 zeus preview -- wymaga login, generuje QR code, ktory jest linkiem do apki. QRcode trzeba zeskanowac telefonem i wciagnac w ten sposob apke via telefon do zegarka.
 ( tam w telefonie trzeba wlaczyc developer mode dla zegarka )
 
