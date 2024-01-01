@@ -30,8 +30,8 @@
       "module": {
         "page": {
           "pages": [
-            "page/t-rex-2/index", 
-            "page/t-rex-2/food-list"
+            "page/index", 
+            "page/menu-list"
         ]
         }
       },
