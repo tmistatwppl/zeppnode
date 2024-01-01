@@ -11,7 +11,7 @@ import {
   FOOD_LIST_RADIO_ITEM,
   FOOD_LIST_RADIO_ITEM_TEXT,
   DEVICE_WIDTH,
-} from "../../utils/styles-t-rex-2";
+} from "../../utils/styles";
 import { FOOD_CALORIES } from "../../utils/constants";
 const logger = Logger.getLogger("calories");
 const globalData = getApp()._options.globalData;
