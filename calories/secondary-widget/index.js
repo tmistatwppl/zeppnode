@@ -73,7 +73,7 @@ SecondaryWidget({
       ...EQUIVALENT_TO_BUTTON,
       click_func: () => {
         push({
-          url: "page/gts/food-list",
+          url: "page/t-rex-2/food-list",
         });
       },
     });
