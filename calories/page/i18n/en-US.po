@@ -30,7 +30,7 @@ msgid "chocolate"
 msgstr "Chocolate"
 
 msgid "consumption"
-msgstr "Consumption Today"
+msgstr "ConsumptionToday"
 
 msgid "sausage"
 msgstr "Sausage"
