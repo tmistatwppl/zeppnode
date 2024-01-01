@@ -1,8 +1,8 @@
 import { log as Logger } from "@zos/utils";
 import LocalStorage from "./utils/storage";
 
-const logger = Logger.getLogger("tmCalories");
-const fileName = "calorie_data.txt";
+const logger = Logger.getLogger("tm8");
+const fileName = "local_data.txt";
 
 App({
   globalData: {
