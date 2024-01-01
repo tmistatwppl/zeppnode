@@ -109,32 +109,4 @@ export const EQUIVALENT_MORE_FOOD_NUM = {
   align_v: align.CENTER_V,
 }
 
-export const FOOD_LIST_Y = 96;
-export const FOOD_LIST_ITEM_MARGIN = 60;
-export const FOOD_LIST_ITEM_HEIGHT = 52;
-export const FOOD_LIST_RADIOGROUP = {
-  select_src: "selected.png",
-  unselect_src: "unselected.png",
-  x: 30,
-  y: FOOD_LIST_Y,
-  w: -1,
-  h: -1,
-};
 
-export const FOOD_LIST_RADIO_ITEM = {
-  x: 0,
-  y: FOOD_LIST_Y,
-  w: FOOD_LIST_ITEM_HEIGHT,
-  h: FOOD_LIST_ITEM_HEIGHT,
-};
-
-export const FOOD_LIST_RADIO_ITEM_TEXT = {
-  x: 106,
-  y: 97,
-  w: 254,
-  h: FOOD_LIST_ITEM_HEIGHT,
-  color: 0xffffff,
-  text_size: 32,
-  align_h: align.LEFT,
-  align_v: align.CENTER_V,
-}

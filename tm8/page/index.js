@@ -1,7 +1,7 @@
 import { getTextLayout, createWidget, widget } from '@zos/ui'
 import { push } from '@zos/router'
 import { getText } from '@zos/i18n'
-import { Calorie } from '@zos/sensor'
+//import { Calorie } from '@zos/sensor'
 import { log as Logger, px } from '@zos/utils'
 
 import {
@@ -25,7 +25,7 @@ import {
   EQUIVALENT_MORE_FOOD_NUM,
 } from "../utils/styles";
 import { FOOD_CALORIES } from "../utils/constants";
-const logger = Logger.getLogger("calories");
+
 const globalData = getApp()._options.globalData;
 
 Page({
@@ -65,7 +65,7 @@ Page({
     group.createWidget(widget.IMG, CONSUME_ICON)
   },
   build() {
-    let calories = new Calorie().getCurrent(); // Math.floor(Math.random() * 1000)
+    let calories = 197;//new Calorie().getCurrent(); // Math.floor(Math.random() * 1000)
     let currentFood = globalData.foodType;
 
     createWidget(widget.TEXT, TOTAL_CONSUME_TEXT)

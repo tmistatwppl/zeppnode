@@ -1,20 +1,48 @@
 import * as hmUI from "@zos/ui";
+import { align } from "@zos/ui";
 import { back } from "@zos/router";
 import { log as Logger, px } from "@zos/utils";
 import { localStorage } from "@zos/storage";
 
-import {
-  FOOD_LIST_Y,
-  FOOD_LIST_ITEM_MARGIN,
-  FOOD_LIST_ITEM_HEIGHT,
-  FOOD_LIST_RADIOGROUP,
-  FOOD_LIST_RADIO_ITEM,
-  FOOD_LIST_RADIO_ITEM_TEXT,
+
+
+import { 
   DEVICE_WIDTH,
-} from "../utils/styles";
+ } from "../utils/styles";
 import { FOOD_CALORIES } from "../utils/constants";
 const logger = Logger.getLogger("calories");
 const globalData = getApp()._options.globalData;
+
+const MENU_LIST_Y = 96;
+const MENU_LIST_ITEM_MARGIN = 60;
+const MENU_LIST_ITEM_HEIGHT = 52;
+const MENU_LIST_RADIOGROUP = {
+  select_src: "selected.png",
+  unselect_src: "unselected.png",
+  x: 30,
+  y: MENU_LIST_Y,
+  w: -1,
+  h: -1,
+};
+
+const MENU_LIST_RADIO_ITEM = {
+  x: 0,
+  y: MENU_LIST_Y,
+  w: MENU_LIST_ITEM_HEIGHT,
+  h: MENU_LIST_ITEM_HEIGHT,
+};
+
+const MENU_LIST_RADIO_ITEM_TEXT = {
+  x: 106,
+  y: 97,
+  w: 254,
+  h: MENU_LIST_ITEM_HEIGHT,
+  color: 0xffffff,
+  text_size: 32,
+  align_h: align.LEFT,
+  align_v: align.CENTER_V,
+}
+
 
 Page({
   state: {
@@ -37,7 +65,7 @@ Page({
   buildFoodList() {
     let activeIndex = 0;
     const radioGroup = hmUI.createWidget(hmUI.widget.RADIO_GROUP, {
-      ...FOOD_LIST_RADIOGROUP,
+      ...MENU_LIST_RADIOGROUP,
       check_func: (group, index, checked) => {
         if (checked) {
           this.state.isFinishInit && this.setPrograms(index);
@@ -62,25 +90,25 @@ Page({
       y: 0,
       w: DEVICE_WIDTH,
       h: px(
-        FOOD_LIST_Y +
+        MENU_LIST_Y +
           (FOOD_CALORIES.length + 1) *
-            (FOOD_LIST_ITEM_HEIGHT + FOOD_LIST_ITEM_MARGIN)
+            (MENU_LIST_ITEM_HEIGHT + MENU_LIST_ITEM_MARGIN)
       ),
     });
     this.buildFoodList();
   },
   buildRadioButton(index) {
     const radio = this.state.radioGroup.createWidget(hmUI.widget.STATE_BUTTON, {
-      ...FOOD_LIST_RADIO_ITEM.styles,
-      y: px(index * (FOOD_LIST_ITEM_HEIGHT + FOOD_LIST_ITEM_MARGIN)),
+      ...MENU_LIST_RADIO_ITEM.styles,
+      y: px(index * (MENU_LIST_ITEM_HEIGHT + MENU_LIST_ITEM_MARGIN)),
     });
     this.state.radioButtonsArray.push(radio);
   },
   buildRadioText(index) {
     const text = hmUI.createWidget(hmUI.widget.TEXT, {
-      ...FOOD_LIST_RADIO_ITEM_TEXT,
+      ...MENU_LIST_RADIO_ITEM_TEXT,
       y: px(
-        FOOD_LIST_Y + index * (FOOD_LIST_ITEM_HEIGHT + FOOD_LIST_ITEM_MARGIN)
+        MENU_LIST_Y + index * (MENU_LIST_ITEM_HEIGHT + MENU_LIST_ITEM_MARGIN)
       ),
       text: `${FOOD_CALORIES[index].name[0].toUpperCase()}${FOOD_CALORIES[
         index
