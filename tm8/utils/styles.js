@@ -20,32 +20,30 @@ export const ALIGN_DESC_GROUP = {
   x: 0,
   y: px(80),
   w: 0,
-  h: px(82),
+  h: px(180),
 };
-export const IMGAE_CALORIES_MARIN = px(0);
-export const CALORIES_UNIT_MARIN = px(8);
-export const CALORIE_TEXT_SIZE = px(72);
-export const CALORIE_TEXT = {
-  text: "400",
-  x: 0,
-  y: 0,
-  w: 0,
-  h: px(82),
-  color: 0xffffff,
-  text_size: CALORIE_TEXT_SIZE,
-  align_h: align.LEFT,
+//export const TITLE_TEXT_SIZE = px(72);
+export const TITLE_TEXT = {
+  text: getText("unit"),
+  x: 4,
+  y: 10,
+  w: 382,
+  h: 38,
+  color: 0x999999,
+  text_size: 28,
+  align_h: align.CENTER_H,
   align_v: align.CENTER_V,
 }
-export const UNIT_TEXT_SIZE = px(24)
+//export const UNIT_TEXT_SIZE = px(24)
 export const UNIT_TEXT = {
-  text: getText("unit"),
-  x: 0,
-  y: px(46),
-  w: 0,
-  h: px(34),
+  text: getText("cake"),
+  x: 4,
+  y: 62,
+  w: 382,
+  h: 38,
   color: 0x999999,
-  text_size: UNIT_TEXT_SIZE,
-  align_h: align.LEFT,
+  text_size: 28,
+  align_h: align.CENTER_H,
   align_v: align.CENTER_V,
 }
 
@@ -61,16 +59,18 @@ export const TOTAL_CONSUME_TEXT = {
   align_v: align.CENTER_V,
 }
 
-export const EQUIVALENT_TO_BUTTON = {
-  text: getText("equivalent"),
+export const MENU_TO_BUTTON = {
+  text: getText("menu"),
   press_color: 0x333333,
   normal_color: 0x1a1a1a,
-  x: 71,
-  y: 330,
-  w: 248,
-  h: 48,
+  x: 120,
+  y: 350,
+  w: 200,
+  h: 60,
   color: 0xffffff,
-  text_size: 28,
+  text_size: 36,
+  align_h: align.CENTER_H,
+  align_v: align.CENTER_V,
   radius: 28,
 };
 
