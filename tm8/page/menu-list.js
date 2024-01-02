@@ -9,7 +9,7 @@ import { localStorage } from "@zos/storage";
 import { 
   DEVICE_WIDTH,
  } from "../utils/styles";
-import { FOOD_CALORIES } from "../utils/constants";
+import { MENU_OPTIONS } from "../utils/constants";
 const logger = Logger.getLogger("calories");
 const globalData = getApp()._options.globalData;
 
@@ -56,9 +56,9 @@ Page({
   },
   setPrograms(index) {
     this.state.activeIndex = index;
-    globalData.foodType = FOOD_CALORIES[index].type;
+    globalData.displayType = MENU_OPTIONS[index].type;
     localStorage.setItem("calorie", {
-      foodType: globalData.foodType
+      displayType: globalData.displayType
     });
     back();
   },
@@ -75,11 +75,11 @@ Page({
 
     this.state.radioGroup = radioGroup;
 
-    for (let index = 0; index < FOOD_CALORIES.length; index++) {
+    for (let index = 0; index < MENU_OPTIONS.length; index++) {
       this.buildRadioButton(index);
       this.buildRadioText(index);
       activeIndex =
-        FOOD_CALORIES[index].type === globalData.foodType ? index : activeIndex;
+        MENU_OPTIONS[index].type === globalData.displayType ? index : activeIndex;
     }
     this.state.activeIndex = activeIndex;
     this.initRadioGroup();
@@ -91,7 +91,7 @@ Page({
       w: DEVICE_WIDTH,
       h: px(
         MENU_LIST_Y +
-          (FOOD_CALORIES.length + 1) *
+          (MENU_OPTIONS.length + 1) *
             (MENU_LIST_ITEM_HEIGHT + MENU_LIST_ITEM_MARGIN)
       ),
     });
@@ -110,7 +110,7 @@ Page({
       y: px(
         MENU_LIST_Y + index * (MENU_LIST_ITEM_HEIGHT + MENU_LIST_ITEM_MARGIN)
       ),
-      text: `${FOOD_CALORIES[index].name[0].toUpperCase()}${FOOD_CALORIES[
+      text: `${MENU_OPTIONS[index].name[0].toUpperCase()}${MENU_OPTIONS[
         index
       ].name.slice(1)}`,
     });

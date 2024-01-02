@@ -1,54 +1,23 @@
-import { getText } from "@zos/i18n";
 
-export const FOOD_CALORIES = [
+export const MENU_OPTIONS = [
   {
-    name: getText("hamburger"),
-    type: "hamburger",
+    name: "menu1_text",
+    type: "menu1_type",
     value: 512,
   },
   {
-    name: getText("chocolate"),
-    type: "chocolate",
+    name: "menu2_text",
+    type: "menu2_type",
     value: 71,
   },
   {
-    name: getText("cookie"),
-    type: "cookies",
+    name: "menu3_text",
+    type: "menu3_type",
     value: 44,
   },
   {
-    name: getText("cake"),
-    type: "cake",
+    name: "menu4_text",
+    type: "menu4_type",
     value: 379,
-  },
-  {
-    name: getText("pizza"),
-    type: "pizza",
-    value: 470,
-  },
-  {
-    name: getText("sausage"),
-    type: "sausage",
-    value: 381,
-  },
-  {
-    name: getText("ham"),
-    type: "ham",
-    value: 99,
-  },
-  {
-    name: getText("iceCream"),
-    type: "ice cream",
-    value: 64,
-  },
-  {
-    name: getText("coffee"),
-    type: "coffee",
-    value: 64,
-  },
-  {
-    name: getText("beer"),
-    type: "beer",
-    value: 64,
   },
 ];
