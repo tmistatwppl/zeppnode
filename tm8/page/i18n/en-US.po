@@ -17,8 +17,8 @@ msgstr "Beer"
 msgid "iceCream"
 msgstr "Ice cream"
 
-msgid "equivalent"
-msgstr "Equivalent to"
+msgid "menu"
+msgstr "  ---  "
 
 msgid "hamburger"
 msgstr "Hamburger"
