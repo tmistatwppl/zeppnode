@@ -7,11 +7,11 @@ import { log as Logger, px } from '@zos/utils'
 import {
   TITLE_TEXT,
   UNIT_TEXT,
-  TOTAL_CONSUME_TEXT,
+  UNIT_TEXT2,
   MENU_TO_BUTTON,
   DEVICE_WIDTH,
 } from "../utils/styles";
-import { FOOD_CALORIES } from "../utils/constants";
+import { MENU_OPTIONS } from "../utils/constants";
 
 const globalData = getApp()._options.globalData;
 
@@ -20,17 +20,17 @@ Page({
     
     createWidget(widget.TEXT, TITLE_TEXT)
     createWidget(widget.TEXT, UNIT_TEXT)
-    createWidget(widget.TEXT, TOTAL_CONSUME_TEXT)
+    createWidget(widget.TEXT, UNIT_TEXT2)
     
 
   },
   build() {
     let calories = 197;//new Calorie().getCurrent(); // Math.floor(Math.random() * 1000)
-    let currentMode = globalData.foodType;
+    let currentMode = globalData.displayType;
 
     this.printContent(currentMode);
 
-    let activeIndex = FOOD_CALORIES.findIndex(
+    let activeIndex = MENU_OPTIONS.findIndex(
       (item) => item.type === currentMode,
     )
     
