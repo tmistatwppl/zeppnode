@@ -4,13 +4,8 @@ import { back } from "@zos/router";
 import { log as Logger, px } from "@zos/utils";
 import { localStorage } from "@zos/storage";
 
+import { MENU_OPTIONS,DEVICE_WIDTH } from "../utils/constants";
 
-
-import { 
-  DEVICE_WIDTH,
- } from "../utils/styles";
-import { MENU_OPTIONS } from "../utils/constants";
-const logger = Logger.getLogger("calories");
 const globalData = getApp()._options.globalData;
 
 const MENU_LIST_Y = 96;
@@ -52,7 +47,7 @@ Page({
     radioButtonsArray: [],
   },
   onInit() {
-    logger.log("onInit");
+    
   },
   setPrograms(index) {
     this.state.activeIndex = index;
