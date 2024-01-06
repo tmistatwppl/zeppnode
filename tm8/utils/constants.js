@@ -27,7 +27,7 @@ export const TITLE_TEXT = {
 }
 
 export const LINE1_TEXT = {
-  text: "Line1_1234567890",
+  text: "Line1_12345678",
   text_style: text_style.NONE,
   x: DEVICE_WIDTH/5,
   y: LINE1_Y,
@@ -40,7 +40,7 @@ export const LINE1_TEXT = {
 }
   
 export const LINE2_TEXT = {
-  text: "Line2_1234567890",
+  text: "Line2_12345678",
   text_style: text_style.NONE,
   x: DEVICE_WIDTH/5,
   y: LINE2_Y,
@@ -53,7 +53,7 @@ export const LINE2_TEXT = {
 }
 
 export const LINE3_TEXT = {
-  text: "Line3_1234567890",
+  text: "Line3_12345678",
   text_style: text_style.NONE,
   x: DEVICE_WIDTH/5,
   y: LINE3_Y,
@@ -66,7 +66,7 @@ export const LINE3_TEXT = {
 }
   
 export const LINE4_TEXT = {
-  text: "Line4_1234567890",
+  text: "Line4_12345678",
   text_style: text_style.NONE,
   x: DEVICE_WIDTH/5,
   y: LINE4_Y,
@@ -79,7 +79,7 @@ export const LINE4_TEXT = {
 }
 
 export const LINE5_TEXT = {
-  text: "Line5_1234567890",
+  text: "Line5 1234567890 dluga linia",
   text_style: text_style.NONE,
   x: DEVICE_WIDTH/5,
   y: LINE5_Y,

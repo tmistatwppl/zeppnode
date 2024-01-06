@@ -1,8 +1,8 @@
 import { getTextLayout, createWidget, widget } from '@zos/ui'
 import { push } from '@zos/router'
-import { getText } from '@zos/i18n'
+
 //import { Calorie } from '@zos/sensor'
-import { log as Logger, px } from '@zos/utils'
+
 
 import {
   TITLE_TEXT,
@@ -12,8 +12,8 @@ import {
   LINE4_TEXT,
   LINE5_TEXT,
   MENU_TO_BUTTON,
-  DEVICE_WIDTH,
-  MENU_OPTIONS
+  
+  MENU_OPTIONS,
 } from "../utils/constants";
 
 const globalData = getApp()._options.globalData;
