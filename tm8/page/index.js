@@ -6,12 +6,15 @@ import { log as Logger, px } from '@zos/utils'
 
 import {
   TITLE_TEXT,
-  UNIT_TEXT,
-  UNIT_TEXT2,
+  LINE1_TEXT,
+  LINE2_TEXT,
+  LINE3_TEXT,
+  LINE4_TEXT,
+  LINE5_TEXT,
   MENU_TO_BUTTON,
   DEVICE_WIDTH,
-} from "../utils/styles";
-import { MENU_OPTIONS } from "../utils/constants";
+  MENU_OPTIONS
+} from "../utils/constants";
 
 const globalData = getApp()._options.globalData;
 
@@ -19,8 +22,11 @@ Page({
   printContent(currentMode) {
     
     createWidget(widget.TEXT, TITLE_TEXT)
-    createWidget(widget.TEXT, UNIT_TEXT)
-    createWidget(widget.TEXT, UNIT_TEXT2)
+    createWidget(widget.TEXT, LINE1_TEXT)
+    createWidget(widget.TEXT, LINE2_TEXT)
+    createWidget(widget.TEXT, LINE3_TEXT)
+    createWidget(widget.TEXT, LINE4_TEXT)
+    createWidget(widget.TEXT, LINE5_TEXT)
     
 
   },

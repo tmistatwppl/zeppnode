@@ -8,8 +8,8 @@ import { localStorage } from "@zos/storage";
 
 import { 
   DEVICE_WIDTH,
- } from "../utils/styles";
-import { MENU_OPTIONS } from "../utils/constants";
+  MENU_OPTIONS, 
+} from "../utils/constants";
 const logger = Logger.getLogger("calories");
 const globalData = getApp()._options.globalData;
 
