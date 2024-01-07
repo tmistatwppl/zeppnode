@@ -34,7 +34,7 @@ Page({
     let activeIndex = MENU_OPTIONS.findIndex(
       (item) => item.type === currentMode,
     );
-    this.calculate(calories, currentMode, MENU_OPTIONS[activeIndex]);
+    this.calculate(calories, MENU_OPTIONS[activeIndex]);
     createWidget(widget.BUTTON, {
       ...MENU_TO_BUTTON,
       click_func: () => {
@@ -44,7 +44,7 @@ Page({
       },
     });
   },
-  calculate(currentCalories, currentMode, modeProperties) { // calculate zeby lepiej diff z calorie 3.0 chodzil
+  calculate(currentCalories, modeProperties) { // calculate zeby lepiej diff z calorie 3.0 chodzil
     let { name, type, value } = modeProperties;
     let count = Math.floor(currentCalories / value);
     if (type === MENU_OPTIONS[0].type) {//menu tryb pierwszy
@@ -61,12 +61,12 @@ Page({
        createWidget(widget.TEXT, LINE3_TEXT);
        createWidget(widget.TEXT, LINE4_TEXT);
     }
-    this.drawFood(count, type); // icon
+    this.drawFood(count, name); // icon
   },
-  drawFood() {
-    let text = LINE5_TEXT;
-    
-    createWidget(widget.TEXT, text);
+  drawFood(count, modeName) {
+    let line5 = LINE5_TEXT;
+    line5.text = modeName + ' aha count jest ' + count;    
+    createWidget(widget.TEXT, line5);
   },
   onReady() {},
 
