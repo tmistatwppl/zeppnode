@@ -53,7 +53,7 @@ Page({
   },
   setPrograms(index) {
     this.state.activeIndex = index;
-    globalData.displayType = MENU_OPTIONS[index].type;
+    globalData.modeType = MENU_OPTIONS[index].type;
     back();
   },
   buildFoodList() {
@@ -73,7 +73,7 @@ Page({
       this.buildRadioButton(index);
       this.buildRadioText(index);
       activeIndex =
-        MENU_OPTIONS[index].type === globalData.displayType ? index : activeIndex;
+        MENU_OPTIONS[index].type === globalData.modeType ? index : activeIndex;
     }
     this.state.activeIndex = activeIndex;
     this.initRadioGroup();
