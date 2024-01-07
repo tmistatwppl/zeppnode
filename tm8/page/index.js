@@ -23,7 +23,7 @@ Page({
     createWidget(widget.TEXT, TITLE_TEXT)
   },
   build() {
-    let calories = 197;//new Calorie().getCurrent(); // Math.floor(Math.random() * 1000)
+    let calories = 11297;//new Calorie().getCurrent(); // Math.floor(Math.random() * 1000)
     let currentMode = globalData.modeType;
 
 //    !isSquare && hmUI.createWidget(hmUI.widget.TEXT, COMMON_TITLE_TEXT);
@@ -34,7 +34,7 @@ Page({
     let activeIndex = MENU_OPTIONS.findIndex(
       (item) => item.type === currentMode,
     );
-    this.calculate(currentMode, MENU_OPTIONS[activeIndex]);
+    this.calculate(calories, currentMode, MENU_OPTIONS[activeIndex]);
     createWidget(widget.BUTTON, {
       ...MENU_TO_BUTTON,
       click_func: () => {
@@ -44,17 +44,21 @@ Page({
       },
     });
   },
-  calculate(currentMode, modeProperties) { // calculate zeby lepiej diff z calorie 3.0 chodzil
+  calculate(currentCalories, currentMode, modeProperties) { // calculate zeby lepiej diff z calorie 3.0 chodzil
+    let { value, type } = modeProperties;
+    let count = Math.floor(currentCalories / value);
     
-    createWidget(widget.TEXT, LINE1_TEXT)
-    createWidget(widget.TEXT, LINE2_TEXT)
-    createWidget(widget.TEXT, LINE3_TEXT)
-    createWidget(widget.TEXT, LINE4_TEXT)
+    createWidget(widget.TEXT, LINE1_TEXT);
+    createWidget(widget.TEXT, LINE2_TEXT);
+    createWidget(widget.TEXT, LINE3_TEXT);
+    createWidget(widget.TEXT, LINE4_TEXT);
     
-    this.drawFood(); // icon
+    this.drawFood(count, type); // icon
   },
   drawFood() {
-    createWidget(widget.TEXT, LINE5_TEXT)
+    let text = LINE5_TEXT;
+    
+    createWidget(widget.TEXT, text);
   },
   onReady() {},
 
