@@ -45,14 +45,22 @@ Page({
     });
   },
   calculate(currentCalories, currentMode, modeProperties) { // calculate zeby lepiej diff z calorie 3.0 chodzil
-    let { value, type } = modeProperties;
+    let { name, type, value } = modeProperties;
     let count = Math.floor(currentCalories / value);
-    
-    createWidget(widget.TEXT, LINE1_TEXT);
-    createWidget(widget.TEXT, LINE2_TEXT);
-    createWidget(widget.TEXT, LINE3_TEXT);
-    createWidget(widget.TEXT, LINE4_TEXT);
-    
+    if (type === MENU_OPTIONS[0].type) {//menu tryb pierwszy
+        createWidget(widget.TEXT, LINE1_TEXT);
+    }
+    if (type === MENU_OPTIONS[1].type) {//menu tryb drugi
+        createWidget(widget.TEXT, LINE1_TEXT);
+        createWidget(widget.TEXT, LINE2_TEXT);
+    }
+    if (type === MENU_OPTIONS[2].type) {//menu tryb trzeci
+       createWidget(widget.TEXT, LINE3_TEXT);
+    }
+    if (type === MENU_OPTIONS[3].type) {//menu tryb czwarty
+       createWidget(widget.TEXT, LINE3_TEXT);
+       createWidget(widget.TEXT, LINE4_TEXT);
+    }
     this.drawFood(count, type); // icon
   },
   drawFood() {
