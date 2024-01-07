@@ -2,15 +2,12 @@ import * as hmUI from "@zos/ui";
 import { align } from "@zos/ui";
 import { back } from "@zos/router";
 import { log as Logger, px } from "@zos/utils";
-import { localStorage } from "@zos/storage";
-
-
 
 import { 
   DEVICE_WIDTH,
   MENU_OPTIONS, 
 } from "../utils/constants";
-const logger = Logger.getLogger("calories");
+const logger = Logger.getLogger("tm8");
 const globalData = getApp()._options.globalData;
 
 const MENU_LIST_Y = 96;
@@ -57,9 +54,6 @@ Page({
   setPrograms(index) {
     this.state.activeIndex = index;
     globalData.displayType = MENU_OPTIONS[index].type;
-    localStorage.setItem("calorie", {
-      displayType: globalData.displayType
-    });
     back();
   },
   buildFoodList() {
