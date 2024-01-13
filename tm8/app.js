@@ -6,15 +6,15 @@ const fileName = "local_data.txt";
 
 App({
   globalData: {
-    displayType: "menu2_type",
+    modeType: "menu2_type",
     localStorage: null,
   },
   onCreate() {
     logger("app onCreate invoke");
     try {
       this.globalData.localStorage = new LocalStorage(fileName);
-      const { displayType = "menu2_type" } = this.globalData.localStorage.get();
-      this.globalData.displayType = displayType;
+      const { modeType = "menu2_type" } = this.globalData.localStorage.get();
+      this.globalData.modeType = modeType;
     } catch (e) {
       logger.log("--->e:", e);
     }
@@ -23,7 +23,7 @@ App({
   onDestroy() {
     logger("app onDestroy invoke");
     this.globalData.localStorage.set({
-      displayType: getApp()._options.globalData.displayType,
+      modeType: getApp()._options.globalData.modeType,
     });
   },
 });
