@@ -6,7 +6,7 @@ export default class myLocalStorage {
     this.contentObj = {};
   }
 
-  setItem(obj) {
+  flushData(obj) {
     writeFileSync({
       path: this.fileName,
       data: JSON.stringify(obj),
@@ -16,7 +16,7 @@ export default class myLocalStorage {
     });
   }
 
-  getItem() {
+  getData() {
     const fStat = statSync({
       path: this.fileName,
     });

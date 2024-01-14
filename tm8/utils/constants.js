@@ -112,21 +112,26 @@ export const MENU_OPTIONS = [
   {
     name: "MODE1     opis: ten tryb bedzie pokazywal lat i long",
     type: "menu1_type",
-    value: 512,
+    value: 10000,
   },
   {
     name: "MODE2 text",
     type: "menu2_type",
-    value: 71,
+    value: 20000,
   },
   {
     name: "MODE3 text",
     type: "menu3_type",
-    value: 44,
+    value: 30000,
   },
   {
     name: "MODE4 text",
     type: "menu4_type",
-    value: 379,
+    value: 40000,
+  },
+  {//for debug
+    name: "MODE5 text",
+    type: "menu5_type",
+    value: 50000,
   },
 ];

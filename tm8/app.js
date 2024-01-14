@@ -4,29 +4,40 @@ import myLocalStorage from "./utils/storage";
 
 import { MENU_OPTIONS } from "./utils/constants";
 
-const logger = Logger.getLogger("tm8");
+//const logger = Logger.getLogger("tm8");
 const fileName = "local_data.txt";
 const appStorage = new myLocalStorage(fileName);
 
 App({
   globalData: {
-    modeType: MENU_OPTIONS[0].type, //"menu1_type",
+    persistentData: MENU_OPTIONS[3], //"menu1_type",
   },
   onCreate() {
-    logger("app onCreate invoke");
+    //logger("app onCreate invoke");
     //const val = localStorage.getItem('test')
-    const modeSaved = appStorage.getItem();
-    //const modeSaved = localStorage.getItem(MENU_OPTIONS[0].type);
-    if (modeSaved){
-      //odczytalem
-      this.globalData.modeType = modeSaved;
+    //let data = appStorage.getData();//BUG_ON
+    let data = { //watermark data specjalnie zmiksowane
+      name: MENU_OPTIONS[4],
+      type: MENU_OPTIONS[1].type,
+      value: 666666,
+     };
+
+    //data.name = "dane po appStorage.getData w onCreate"
+    //const data = localStorage.getItem(MENU_OPTIONS[0].type);
+    if (data){
+      //odczytalem      
+      this.globalData.persistentData = data;
+      data.name = "dane zapisane do persistentData w onCreate"
     }    
   },
 
   onDestroy() {
-    logger("app onDestroy invoke");
-    //const modeForSave = this.globalData.modeType;
+    //logger("app onDestroy invoke");
+    //const modeForSave = this.globalData.persistentData;
     //localStorage.setItem('test', 'test value')
-    appStorage.setItem(MENU_OPTIONS[3].type);//zapisuje 3ke czy odczytam 3rke
+    let data = MENU_OPTIONS[3];
+    data.name = "MENU_OPT3 zapisane w onDestroy()";
+    data.value = 777777; //nigdzie tej wartosci nie zapisuje , gdyby sie pojawila to tylko z odczytu storage
+    appStorage.flashData(data);//zapisuje 3ke czy odczytam 3rke
   },
 });
