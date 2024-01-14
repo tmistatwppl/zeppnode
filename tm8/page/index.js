@@ -47,7 +47,7 @@ Page({
   },
   updateDisplay(modeProperties,Data,Mode,Name) { // updateDisplay zeby lepiej diff z calorie 3.0 chodzil
     let { name, type, value } = modeProperties;
-    let dbgdata = 'dbg:';
+    let dbgdata = ' dbg:';
     
     if (type === MENU_OPTIONS[0].type) {//menu tryb pierwszy
         createWidget(widget.TEXT, LINE1_TEXT);        
