@@ -1,5 +1,7 @@
 import { log as Logger } from "@zos/utils";
-import LocalStorage from "./utils/storage";
+//import myLocalStorage from "./utils/storage";
+import { localStorage } from '@zos/storage'
+
 import { MENU_OPTIONS } from "./utils/constants";
 
 const logger = Logger.getLogger("tm8");
@@ -7,24 +9,23 @@ const fileName = "local_data.txt";
 
 App({
   globalData: {
-    modeType: MENU_OPTIONS[2].type, //"menu2_type",
-    localStorage: null,
+    modeType: MENU_OPTIONS[0].type, //"menu1_type",
   },
   onCreate() {
     logger("app onCreate invoke");
-    try {
-      this.globalData.localStorage = new LocalStorage(fileName);
-      const { modeType } = this.globalData.localStorage.get();
-      this.globalData.modeType = modeType;
-    } catch (e) {
-      logger.log("--->e:", e);
-    }
+    //const val = localStorage.getItem('test')
+    const modeSaved = localStorage.getItem('type');
+    //const modeSaved = localStorage.getItem(MENU_OPTIONS[0].type);
+    if (modeSaved){
+      //odczytalem
+      this.globalData.modeType = modeSaved;
+    }    
   },
 
   onDestroy() {
     logger("app onDestroy invoke");
-    this.globalData.localStorage.set({
-      modeType: getApp()._options.globalData.modeType,
-    });
+    //const modeForSave = this.globalData.modeType;
+    //localStorage.setItem('test', 'test value')
+    localStorage.setItem('type', MENU_OPTIONS[3].type);//zapisuje 3ke czy odczytam 3rke
   },
 });

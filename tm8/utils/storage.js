@@ -1,12 +1,12 @@
 import { statSync, writeFileSync, readFileSync } from "@zos/fs";
 
-export default class LocalStorage {
+export default class myLocalStorage {
   constructor(fileName = "") {
     this.fileName = fileName;
     this.contentObj = {};
   }
 
-  set(obj) {
+  setItem(obj) {
     writeFileSync({
       path: this.fileName,
       data: JSON.stringify(obj),
@@ -16,7 +16,7 @@ export default class LocalStorage {
     });
   }
 
-  get() {
+  getItem() {
     const fStat = statSync({
       path: this.fileName,
     });
