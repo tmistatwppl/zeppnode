@@ -8,7 +8,7 @@ import {
   MENU_OPTIONS, 
 } from "../utils/constants";
 const logger = Logger.getLogger("tm8");
-const globalData = getApp()._options.globalData;
+const persistentData = getApp()._options.globalData.persistentData;
 
 const MENU_LIST_Y = 96;
 const MENU_LIST_ITEM_MARGIN = 60;
@@ -53,7 +53,10 @@ Page({
   },
   setPrograms(index) {
     this.state.activeIndex = index;
-    globalData.modeType = MENU_OPTIONS[index].type;
+    //persistentData = MENU_OPTIONS[index] - buduje ale nie dziaja bo persistentData jest tutaj const
+    persistentData.name = MENU_OPTIONS[index].name;
+    persistentData.type = MENU_OPTIONS[index].type;
+    persistentData.value = MENU_OPTIONS[index].value;
     back();
   },
   buildFoodList() {
@@ -73,7 +76,7 @@ Page({
       this.buildRadioButton(index);
       this.buildRadioText(index);
       activeIndex =
-        MENU_OPTIONS[index].type === globalData.modeType ? index : activeIndex;
+        MENU_OPTIONS[index].type === persistentData.type ? index : activeIndex;
     }
     this.state.activeIndex = activeIndex;
     this.initRadioGroup();

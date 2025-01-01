@@ -1,0 +1,12 @@
+po odpaleniu appki
+dbg msg:
+MODE2_text - jak ustawione w app.js OnCreate
+v:20000 - to jest value zgodnie z menu2
+d:666666 - ???
+m:menu1
+n:dane zapisane do persistentData w OnCreate
+
+dalej
+po odpaleniu appki
+MODE2 na displayu
+dbg v20000 d:undefined m:menu1 n: fN:tm8_local_data.txt
